@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1qt23xi8ndet"]
+
+[ext_resource type="Script" path="res://Scripts/join_screen.gd" id="1_air2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wt75o"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="JoinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_air2s")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.5
+offset_top = -323.0
+offset_right = 574.5
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wt75o")
+
+[node name="Name" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -84.0
+offset_right = 194.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Name"
+alignment = 1
+max_length = 15
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 4.0
+offset_right = 119.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Back" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "BACK"
+
+[node name="Next" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "NEXT
+"
+
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Buttons/Next" to="." method="_on_continue_pressed"]
