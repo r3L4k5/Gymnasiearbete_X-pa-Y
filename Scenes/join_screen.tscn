@@ -30,25 +30,7 @@ offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wt75o")
-
-[node name="Name" type="LineEdit" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -84.0
-offset_right = 194.0
-offset_bottom = -13.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-placeholder_text = "Name"
-alignment = 1
-max_length = 15
+metadata/_edit_lock_ = true
 
 [node name="Buttons" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -57,10 +39,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = 4.0
-offset_right = 119.0
-offset_bottom = 60.0
+offset_left = -136.0
+offset_top = 51.0
+offset_right = 141.0
+offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -75,8 +57,41 @@ text = "BACK"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 25
-text = "NEXT
+text = "CONNECT
 "
+
+[node name="Inputs" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -124.0
+offset_right = 202.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Name" type="LineEdit" parent="Inputs"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Name"
+alignment = 1
+max_length = 15
+expand_to_text_length = true
+
+[node name="IPAddress" type="LineEdit" parent="Inputs"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+placeholder_text = "IP - Address"
+alignment = 1
+max_length = 15
+expand_to_text_length = true
 
 [connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Next" to="." method="_on_continue_pressed"]
