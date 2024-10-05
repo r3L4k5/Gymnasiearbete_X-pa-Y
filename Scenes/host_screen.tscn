@@ -75,4 +75,5 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 25
 text = "CREATE "
 
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Create" to="." method="_on_create_pressed"]

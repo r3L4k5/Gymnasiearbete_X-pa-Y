@@ -1,10 +1,15 @@
 extends Control
 
-func _on_continue_pressed():
-	if len($Name.text) < 1:
+func _on_connect_pressed():
+	if len($Inputs/Name.text) == 0:
 		return
-	main.nickname = $Name.text
-	#print("Hello" + main.nickname)
+	else:
+		main.username = $Inputs/Name.text
+	
+	var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
+	peer.create_client("192.168.50.185", main.PORT)
+	
+	multiplayer.set_multiplayer_peer(peer)
 
 func _on_back_pressed():
 	var start_menu = load("res://Scenes/start_menu.tscn")
