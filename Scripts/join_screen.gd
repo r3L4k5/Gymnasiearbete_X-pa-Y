@@ -1,7 +1,8 @@
 extends Control
 
+
 func _on_connect_pressed():
-	if len($Inputs/Name.text) == 0:
+	if len($Inputs/Name.text) <= 0:
 		return
 	else:
 		main.username = $Inputs/Name.text

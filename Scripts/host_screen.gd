@@ -1,6 +1,7 @@
 extends Control
 
-@onready var server_name = $ServerName
+
+var categories: Array
 
 #Server creation
 func _ready():
@@ -22,17 +23,23 @@ func connection_failed():
 	print("Server Failed")
 
 func _on_create_pressed():
+	game_settings()
+	
 	var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
-	peer.create_server(main.PORT)
+	peer.create_server(main.PORT, $Settings/PlayerSlider.value)
 	
 	multiplayer.multiplayer_peer = peer
 
 #Settings
 func game_settings():
-	pass
+	for category in $Settings/Categories.get_children():
+		if len(category.text) <= 0 or category.text.capitalize() in categories:
+			continue
+		else:
+			categories.append(category.text.capitalize())
 
 func _on_player_amount_value_changed(value):
-	$Settings/Sliders/PlayerAmount/PlayerAmountLabel.text = "Players: " + str(value)
+	$Settings/PlayerAmount.text = "Players: " + str(value)
 
 #Backbutton
 func _on_back_pressed():
