@@ -7,9 +7,9 @@ func _on_connect_pressed():
 		main.username = $Inputs/Name.text
 	
 	var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
-	peer.create_client("192.168.50.185", main.PORT)
+	peer.create_client($Inputs/IPAddress.text, main.PORT)
 	
-	multiplayer.set_multiplayer_peer(peer)
+	multiplayer.multiplayer_peer = peer
 
 func _on_back_pressed():
 	var start_menu = load("res://Scenes/start_menu.tscn")

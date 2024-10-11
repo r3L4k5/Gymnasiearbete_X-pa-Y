@@ -1,6 +1,6 @@
 extends Node2D
 
-const PORT: int = 255255
+const PORT: int = 25255
 
 @export var score: int 
 @export var username: String
