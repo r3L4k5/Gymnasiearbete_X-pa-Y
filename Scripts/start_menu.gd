@@ -1,5 +1,6 @@
 extends Control
 
+
 func _on_join_pressed():
 	var join_screen = load("res://Scenes/join_screen.tscn")
 	get_parent().switch_screens(self, join_screen.instantiate()) 

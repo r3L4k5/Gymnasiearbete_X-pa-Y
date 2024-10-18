@@ -11,6 +11,7 @@ func _ready():
 	multiplayer.connection_failed.connect(connection_failed)
 
 func peer_connected(id):
+	print(id)
 	print("Connected")
 
 func peer_disconnected(id):
@@ -23,20 +24,28 @@ func connection_failed():
 	print("Server Failed")
 
 func _on_create_pressed():
-	game_settings()
+	if ready_categories() == false:
+		print("Atleast three different categories")
+		return
 	
+	var player_amount: int =  $Settings/PlayerSlider.value
 	var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
-	peer.create_server(main.PORT, $Settings/PlayerSlider.value)
 	
+	peer.create_server(main.PORT, player_amount)
 	multiplayer.multiplayer_peer = peer
+	
+	get_parent().screens.swicth_screens()
 
 #Settings
-func game_settings():
+func ready_categories():
 	for category in $Settings/Categories.get_children():
 		if len(category.text) <= 0 or category.text.capitalize() in categories:
 			continue
 		else:
 			categories.append(category.text.capitalize())
+			
+	if categories.size() < 3:
+		return false
 
 func _on_player_amount_value_changed(value):
 	$Settings/PlayerAmount.text = "Players: " + str(value)

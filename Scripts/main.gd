@@ -7,6 +7,9 @@ const PORT: int = 25255
 
 var ip_address: String
 
-func _ready() -> void:
-	ip_address = IP.get_local_addresses()[5]
+func switch_screens(cur_screen, new_screen):
+	remove_child(cur_screen)
+	add_child(new_screen)
+	
+
 	

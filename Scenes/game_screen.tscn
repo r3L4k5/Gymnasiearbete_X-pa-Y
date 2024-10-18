@@ -12,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0, 0.284415, 0.284515, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

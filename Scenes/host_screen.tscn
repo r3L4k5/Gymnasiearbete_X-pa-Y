@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://nbloh3v2ad7p"]
+[gd_scene load_steps=5 format=3 uid="uid://nbloh3v2ad7p"]
 
 [ext_resource type="Script" path="res://Scripts/host_screen.gd" id="1_sslsd"]
 
@@ -7,7 +7,8 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hecct"]
 font_size = 22
-font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wnyc2"]
 
 [node name="HostScreen" type="Control"]
 layout_mode = 3
@@ -22,6 +23,7 @@ size_flags_vertical = 4
 script = ExtResource("1_sslsd")
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0, 0.286275, 0.286275, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,33 +58,6 @@ theme_override_font_sizes/font_size = 30
 placeholder_text = "Server Name"
 alignment = 1
 max_length = 15
-
-[node name="Buttons" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -136.0
-offset_top = -168.0
-offset_right = 164.0
-offset_bottom = -108.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 40
-
-[node name="Back" type="Button" parent="Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
-text = "BACK"
-
-[node name="Create" type="Button" parent="Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
-text = "CREATE "
 
 [node name="Settings" type="Control" parent="."]
 layout_mode = 1
@@ -120,6 +95,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="Category2" type="LineEdit" parent="Settings/Categories"]
@@ -127,6 +103,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="Category3" type="LineEdit" parent="Settings/Categories"]
@@ -134,6 +111,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="Category4" type="LineEdit" parent="Settings/Categories"]
@@ -141,6 +119,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="Category5" type="LineEdit" parent="Settings/Categories"]
@@ -148,6 +127,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="Category6" type="LineEdit" parent="Settings/Categories"]
@@ -155,6 +135,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="Category7" type="LineEdit" parent="Settings/Categories"]
@@ -162,6 +143,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="Category8" type="LineEdit" parent="Settings/Categories"]
@@ -169,6 +151,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="Category9" type="LineEdit" parent="Settings/Categories"]
@@ -176,6 +159,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
+placeholder_text = "Empty"
 max_length = 12
 
 [node name="PlayerSlider" type="HSlider" parent="Settings"]
@@ -193,17 +177,17 @@ value = 3.0
 ticks_on_borders = true
 
 [node name="PlayerAmount" type="Label" parent="Settings"]
-self_modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-offset_left = 410.667
+offset_left = 416.0
 offset_top = 42.6667
-offset_right = 517.667
+offset_right = 523.0
 offset_bottom = 74.6667
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Players: 3"
 label_settings = SubResource("LabelSettings_hecct")
 
 [node name="CategoriesLabel" type="Label" parent="Settings"]
-self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
 offset_left = 101.333
 offset_top = 42.6667
 offset_right = 220.333
@@ -211,6 +195,35 @@ offset_bottom = 74.6667
 text = "Categories:"
 label_settings = SubResource("LabelSettings_hecct")
 
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 164.0
+offset_right = 108.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+theme_override_constants/separation = 40
+
+[node name="Back" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "BACK"
+icon = SubResource("ViewportTexture_wnyc2")
+
+[node name="Create" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "CREATE"
+
+[connection signal="value_changed" from="Settings/PlayerSlider" to="." method="_on_player_amount_value_changed"]
 [connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Create" to="." method="_on_create_pressed"]
-[connection signal="value_changed" from="Settings/PlayerSlider" to="." method="_on_player_amount_value_changed"]

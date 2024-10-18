@@ -18,3 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 main="*res://Scenes/main.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
