@@ -3,15 +3,8 @@ extends Control
 
 var categories: Array
 
-#Server creation
-func _ready():
-	multiplayer.peer_connected.connect(peer_connected)
-	multiplayer.peer_disconnected.connect(peer_disconnected)
-	multiplayer.connected_to_server.connect(connected_to_sever)
-	multiplayer.connection_failed.connect(connection_failed)
-
+#Server creation and connection
 func peer_connected(id):
-	print(id)
 	print("Connected")
 
 func peer_disconnected(id):
@@ -24,6 +17,12 @@ func connection_failed():
 	print("Server Failed")
 
 func _on_create_pressed():
+	
+	multiplayer.peer_connected.connect(peer_connected)
+	multiplayer.peer_disconnected.connect(peer_disconnected)
+	multiplayer.connected_to_server.connect(connected_to_sever)
+	multiplayer.connection_failed.connect(connection_failed)
+	
 	if ready_categories() == false:
 		print("Atleast three different categories")
 		return
@@ -34,7 +33,8 @@ func _on_create_pressed():
 	peer.create_server(main.PORT, player_amount)
 	multiplayer.multiplayer_peer = peer
 	
-	get_parent().screens.swicth_screens()
+	get_parent().switch_screens(self, "lobby_screen")
+
 
 #Settings
 func ready_categories():
@@ -50,7 +50,8 @@ func ready_categories():
 func _on_player_amount_value_changed(value):
 	$Settings/PlayerAmount.text = "Players: " + str(value)
 
+
 #Backbutton
 func _on_back_pressed():
 	var start_menu = load("res://Scenes/start_menu.tscn")
-	get_parent().switch_screens(self, start_menu.instantiate())
+	get_parent().switch_screens(self, "start_menu")

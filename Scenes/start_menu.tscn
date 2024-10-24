@@ -22,7 +22,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_mok6u")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

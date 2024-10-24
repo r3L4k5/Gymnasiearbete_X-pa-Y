@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvnhj11haloef"]
+[gd_scene load_steps=3 format=3 uid="uid://cvnhj11haloef"]
+
+[ext_resource type="Script" path="res://Scripts/lobby_screen.gd" id="1_355do"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njduo"]
 bg_color = Color(1, 1, 1, 1)
@@ -10,8 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_355do")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 self_modulate = Color(0, 0.286275, 0.286275, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -27,3 +30,210 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_njduo")
 metadata/_edit_lock_ = true
+
+[node name="PlayerTabell" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -206.0
+offset_right = 122.0
+offset_bottom = -186.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(12.849, 8)
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Player1" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player1"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 61.0
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player1"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="Player2" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player2"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -0.87604
+offset_right = 53.0
+offset_bottom = 61.124
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player2"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="Player3" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player3"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 61.0
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player3"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="Player4" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player4"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 61.0
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player4"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="Player5" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player5"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 61.0
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player5"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="Player6" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player6"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 61.0
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player6"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="Player7" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player7"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 61.0
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player7"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="Player8" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player8"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 61.0
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player8"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="Player9" type="Control" parent="PlayerTabell"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="PlayerTabell/Player9"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 61.0
+scale = Vector2(0.217698, 0.0980435)
+
+[node name="Username" type="Label" parent="PlayerTabell/Player9"]
+layout_mode = 0
+offset_left = 0.181815
+offset_top = -0.437958
+offset_right = 75.1818
+offset_bottom = 24.562
+scale = Vector2(0.124326, 0.179802)
+text = "No Player"
+
+[node name="PlayerCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 56.0
+offset_right = 970.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 30
+text = "Players: 0/10"

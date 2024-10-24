@@ -13,5 +13,4 @@ func _on_connect_pressed():
 	multiplayer.multiplayer_peer = peer
 
 func _on_back_pressed():
-	var start_menu = load("res://Scenes/start_menu.tscn")
-	get_parent().switch_screens(self, start_menu.instantiate())
+	get_parent().switch_screens(self, "start_menu")

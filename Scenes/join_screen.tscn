@@ -14,9 +14,10 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(-207, 319)
 script = ExtResource("1_air2s")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 self_modulate = Color(0, 0.286275, 0.286275, 1)
 layout_mode = 1
 anchors_preset = 8
